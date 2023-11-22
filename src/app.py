@@ -1,12 +1,12 @@
 
 from flask import Flask, render_template
 
-app=Flask(__name__)
+app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    titulo='IEVN'
+    titulo= 'IEVN'
     list=['Pedro', 'Mario', 'Dario']
     return render_template('index.html',titulo=titulo, list=list)
 
@@ -33,7 +33,7 @@ def suma(n1, n2):
 @app.route("/default")
 @app.route("/default/<string:n>")
 def default(n='Jose'):
-    return "Eñ valor de n es: "+n
+    return "El valor de n es: "+n
 
 if __name__ == "__main__":
     app.run(debug=True)
